@@ -1,176 +1,302 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
-    <link type="text/css" rel="stylesheet" href="../public/css/materialize.min.css" media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="../public/css/main.css"></link>
-    <script src="http://maps.google.com/maps/api/js"></script>
-    <script src="../public/js/gmaps.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-green.min.css"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="../public/css/main.css"/>
+    <script src="../public/js/material.min.js"></script>
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" href="../public/css/owl.carousel.min.css"/>
+    <link rel="stylesheet" href="../public/css/owl.theme.default.min.css"/>
     <meta charset="UTF-8"/>
-    <title>Goevent</title>
+    <title>Goevent - Home</title>
 </head>
 <body>
-<nav>
-    <div class="nav-wrapper grey darken-3">
-        <a href="#" class="brand-logo left">Goevent</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="#" class="text-lighten-4">Browse events</a></li>
-            <li><a href="#">Sell tickets</a></li>
-        </ul>
-    </div>
-</nav>
-<img id="eventImage"
-     src="https://static.pexels.com/photos/196356/pexels-photo-196356.jpeg"/>
-<div class="container">
-    <div class="row">
-        <div class="col s6 center">
-            <h5>Date and time</h5>
-            <p>Sat, January 28, 2017 10:00 AM – 7:00 PM EET</p>
-
-        </div>
-        <div class="col s6 center">
-            <a class="waves-effect waves-light btn">Get tickets</a>
-            <br/>
-            <a class="resp-sharing-button__link"
-               href="https://facebook.com/sharer/sharer.php?u=http%3A%2F%2Fsharingbuttons.io" target="_blank"
-               aria-label="Facebook">
-                <div class="resp-sharing-button resp-sharing-button--facebook resp-sharing-button--medium">
-                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M18.77 7.46H14.5v-1.9c0-.9.6-1.1 1-1.1h3V.5h-4.33C10.24.5 9.5 3.44 9.5 5.32v2.15h-3v4h3v12h5v-12h3.85l.42-4z"/>
-                        </svg>
-                    </div>
-                    Facebook
-                </div>
-            </a>
-            <a class="resp-sharing-button__link"
-               href="https://twitter.com/intent/tweet/?text=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;url=http%3A%2F%2Fsharingbuttons.io"
-               target="_blank" aria-label="Twitter">
-                <div class="resp-sharing-button resp-sharing-button--twitter resp-sharing-button--medium">
-                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M23.44 4.83c-.8.37-1.5.38-2.22.02.93-.56.98-.96 1.32-2.02-.88.52-1.86.9-2.9 1.1-.82-.88-2-1.43-3.3-1.43-2.5 0-4.55 2.04-4.55 4.54 0 .36.03.7.1 1.04-3.77-.2-7.12-2-9.36-4.75-.4.67-.6 1.45-.6 2.3 0 1.56.8 2.95 2 3.77-.74-.03-1.44-.23-2.05-.57v.06c0 2.2 1.56 4.03 3.64 4.44-.67.2-1.37.2-2.06.08.58 1.8 2.26 3.12 4.25 3.16C5.78 18.1 3.37 18.74 1 18.46c2 1.3 4.4 2.04 6.97 2.04 8.35 0 12.92-6.92 12.92-12.93 0-.2 0-.4-.02-.6.9-.63 1.96-1.22 2.56-2.14z"/>
-                        </svg>
-                    </div>
-                    Twitter
-                </div>
-            </a>
-            <a class="resp-sharing-button__link"
-               href="https://plus.google.com/share?url=http%3A%2F%2Fsharingbuttons.io"
-               target="_blank" aria-label="Google+">
-                <div class="resp-sharing-button resp-sharing-button--google resp-sharing-button--medium">
-                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M11.37 12.93c-.73-.52-1.4-1.27-1.4-1.5 0-.43.03-.63.98-1.37 1.23-.97 1.9-2.23 1.9-3.57 0-1.22-.36-2.3-1-3.05h.5c.1 0 .2-.04.28-.1l1.36-.98c.16-.12.23-.34.17-.54-.07-.2-.25-.33-.46-.33H7.6c-.66 0-1.34.12-2 .35-2.23.76-3.78 2.66-3.78 4.6 0 2.76 2.13 4.85 5 4.9-.07.23-.1.45-.1.66 0 .43.1.83.33 1.22h-.08c-2.72 0-5.17 1.34-6.1 3.32-.25.52-.37 1.04-.37 1.56 0 .5.13.98.38 1.44.6 1.04 1.84 1.86 3.55 2.28.87.23 1.82.34 2.8.34.88 0 1.7-.1 2.5-.34 2.4-.7 3.97-2.48 3.97-4.54 0-1.97-.63-3.15-2.33-4.35zm-7.7 4.5c0-1.42 1.8-2.68 3.9-2.68h.05c.45 0 .9.07 1.3.2l.42.28c.96.66 1.6 1.1 1.77 1.8.05.16.07.33.07.5 0 1.8-1.33 2.7-3.96 2.7-1.98 0-3.54-1.23-3.54-2.8zM5.54 3.9c.33-.38.75-.58 1.23-.58h.05c1.35.05 2.64 1.55 2.88 3.35.14 1.02-.08 1.97-.6 2.55-.32.37-.74.56-1.23.56h-.03c-1.32-.04-2.63-1.6-2.87-3.4-.13-1 .08-1.92.58-2.5zM23.5 9.5h-3v-3h-2v3h-3v2h3v3h2v-3h3"/>
-                        </svg>
-                    </div>
-                    Google+
-                </div>
-            </a>
-            <a class="resp-sharing-button__link"
-               href="mailto:?subject=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;body=http%3A%2F%2Fsharingbuttons.io"
-               target="_self" aria-label="E-Mail">
-                <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--medium">
-                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M22 4H2C.9 4 0 4.9 0 6v12c0 1.1.9 2 2 2h20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM7.25 14.43l-3.5 2c-.08.05-.17.07-.25.07-.17 0-.34-.1-.43-.25-.14-.24-.06-.55.18-.68l3.5-2c.24-.14.55-.06.68.18.14.24.06.55-.18.68zm4.75.07c-.1 0-.2-.03-.27-.08l-8.5-5.5c-.23-.15-.3-.46-.15-.7.15-.22.46-.3.7-.14L12 13.4l8.23-5.32c.23-.15.54-.08.7.15.14.23.07.54-.16.7l-8.5 5.5c-.08.04-.17.07-.27.07zm8.93 1.75c-.1.16-.26.25-.43.25-.08 0-.17-.02-.25-.07l-3.5-2c-.24-.13-.32-.44-.18-.68s.44-.32.68-.18l3.5 2c.24.13.32.44.18.68z"/>
-                        </svg>
-                    </div>
-                    E-Mail
-                </div>
-            </a>
-            <a class="resp-sharing-button__link"
-               href="http://vk.com/share.php?title=Super%20fast%20and%20easy%20Social%20Media%20Sharing%20Buttons.%20No%20JavaScript.%20No%20tracking.&amp;url=http%3A%2F%2Fsharingbuttons.io"
-               target="_blank" aria-label="VK">
-                <div class="resp-sharing-button resp-sharing-button--vk resp-sharing-button--medium">
-                    <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--solid">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M21.547 7h-3.29a.743.743 0 0 0-.655.392s-1.312 2.416-1.734 3.23C14.734 12.813 14 12.126 14 11.11V7.603A1.104 1.104 0 0 0 12.896 6.5h-2.474a1.982 1.982 0 0 0-1.75.813s1.255-.204 1.255 1.49c0 .42.022 1.626.04 2.64a.73.73 0 0 1-1.272.503 21.54 21.54 0 0 1-2.498-4.543.693.693 0 0 0-.63-.403h-2.99a.508.508 0 0 0-.48.685C3.005 10.175 6.918 18 11.38 18h1.878a.742.742 0 0 0 .742-.742v-1.135a.73.73 0 0 1 1.23-.53l2.247 2.112a1.09 1.09 0 0 0 .746.295h2.953c1.424 0 1.424-.988.647-1.753-.546-.538-2.518-2.617-2.518-2.617a1.02 1.02 0 0 1-.078-1.323c.637-.84 1.68-2.212 2.122-2.8.603-.804 1.697-2.507.197-2.507z"/>
-                        </svg>
-                    </div>
-                    VK
-                </div>
-            </a>
+<div th:replace="headers :: header"/>
+<div class="index-image-section mdl-typography--text-center" id="index">
+    <div class="mdl-grid">
+        <div class="text-image_section mdl-cell mdl-cell--12-col">
+            <p class="mdl-typography--font-light mdl-typography--display-2">The best way to organize events</p>
+            <p class="mdl-typography--font-light mdl-typography--display-1">Create an awesome event</p>
         </div>
     </div>
-    <div class="row">
-        <div class="col s6">
-            <h5>Description</h5>
-            <p>
-                Come together Elixir programmers!
-
-                New Kyiv Elixir meetup in the 2017 Year will happen on 28th January.
-                We are working for an interesting program and want to do create something special.
-
-                Keep in touch ;)
-            </p>
-        </div>
-        <div class="col s6 center">
-            <h5>Location</h5>
-            <p>HUB 4.0 <br/> 1/3 Yaroslavs'kyi Lane<br/>Kyiv</p>
-            <a href="#">View on map</a>
+    <div class="mdl-grid--no-spacing">
+        <div class="mdl-cell mdl-cell--12-col">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                Create an event
+            </button>
         </div>
     </div>
-    <div class="divider"></div>
-    <div class="row">
-        <h5>See you at</h5>
-        <div class="col s12" id="map"></div>
-        <script>
-            var map = new GMaps({
-                el: '#map',
-                lat: 50.4446536,
-                lng: 30.521422
-            });
-        </script>
-    </div>
-    <div class="row">
-        <div class="col s12 center">
-            <h5>About organizer</h5>
-            <p>Inna Obolenska</p>
-            <p class="text-lighten-3">Ruby Meditation Elixir Meetup Team</p>
-            <a class="waves-effect waves-teal btn-flat ">Contact</a>
+    <div class="mdl-grid--no-spacing">
+        <div class="index-button mdl-cell mdl-cell--12-col">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                or see events
+            </button>
         </div>
     </div>
 </div>
-<footer class="page-footer teal grey darken-2">
-    <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-                <h5 class="white-text">Company Bio</h5>
-                <p class="white-text text-lighten">We are a team of college students working on this project like it's
-                    our full time job. Any amount would help support and continue development on this project and is
-                    greatly appreciated.</p>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Learn more</h5>
-                <ul>
-                    <li><a class="white-text" href="#">How it works</a></li>
-                    <li><a class="white-text" href="#">Terms of use</a></li>
-                    <li><a class="white-text" href="#"></a></li>
-                    <li><a class="white-text" href="#">Link 4</a></li>
-                </ul>
-            </div>
-            <div class="col l3 s12">
-                <h5 class="white-text">Contact</h5>
-                <ul>
-                    <li><a class="white-text" href="#">Link 1</a></li>
-                    <li><a class="white-text" href="#">Link 2</a></li>
-                    <li><a class="white-text" href="#">Link 3</a></li>
-                    <li><a class="white-text" href="#">Link 4</a></li>
-                </ul>
+<div class="index-one-line-section mdl-typography--text-center">
+    <p class="mdl-typography--headline mdl-typography--font-thin">Goevent is a smart tool for successful event organizers.</p>
+</div>
+<div class="features-section">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <h2 class="mdl-typography--font-thin">Features</h2>
+        </div>
+    </div>
+    <div class="mdl-grid mdl-typography--text-center">
+        <div class="mdl-cell mdl-cell--4-col">
+            <p><b>EVENT PAGE</b></p>
+            <p>Choose a cover photo, add description, additional text, contacts, tickets and location.
+                Compose and publish a professional inviting page in less than 5 minutes.</p>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <p><b>TICKETS</b></p>
+            <p>Attendees receive an email confirming their tickets. Add your custom tickets to event page.</p>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <p><b>CHECK IN ATTENDEES</b></p>
+            <p>Search guest names and check them in on your phone or tablet with <a href="#">Goevent Organizer app</a></p>
+        </div>
+    </div>
+    <div class="mdl-grid mdl-typography--text-center">
+        <div class="mdl-cell mdl-cell--4-col">
+            <p><b>ORGANIZER'S PANEL</b></p>
+            <p>Get a snapshot of your events' attendees or tickets got.</p>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <p><b>SCAN TICKETS</b></p>
+            <p>Use the in-built camera to scan tickets as they arrive. Both mobile and paper tickets are supported.</p>
+        </div>
+        <div class="mdl-cell mdl-cell--4-col">
+            <p><b>MULTI-USER ACCESS</b></p>
+            <p>Grant your team access to your events.</p>
+        </div>
+    </div>
+</div>
+<div class="index-mobile-app">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <h2 class="mdl-typography--font-thin">Mobile app</h2>
+        </div>
+    </div>
+</div>
+<div class="upcoming-events-section">
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <h2 class="mdl-typography--font-thin">Upcoming events</h2>
+        </div>
+    </div>
+    <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+            <div class="owl-carousel owl-theme">
+                <div class="index-event-card mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">KSE Finance Club Meeting with KPMG Ukraine</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                            <b>Date and time:</b> Fri, January 27, 2017
+                            3:30 PM – 5:00 PM EET</p>
+                        <p>
+                            <b>Location:</b>KPMG Ukraine
+                            32 вулиця Московська
+                            Kyiv</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            See more
+                        </a>
+                    </div>
+                </div>
+                <div class="index-event-card mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">KSE Finance Club Meeting with KPMG Ukraine</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                            <b>Date and time:</b> Fri, January 27, 2017
+                            3:30 PM – 5:00 PM EET</p>
+                        <p>
+                            <b>Location:</b>KPMG Ukraine
+                            32 вулиця Московська
+                            Kyiv</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            See more
+                        </a>
+                    </div>
+                </div>
+                <div class="index-event-card mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">Webinar: Grantwriting 101</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                            <b>Date and time:</b> Fri, January 27, 2017
+                            3:30 PM – 5:00 PM EET</p>
+                        <p>
+                            <b>Location:</b>KPMG Ukraine
+                            32 вулиця Московська
+                            Kyiv</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            See more
+                        </a>
+                    </div>
+                </div>
+                <div class="index-event-card mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">FINTECH SCT #2 in Kyiv</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                            <b>Date and time:</b> Fri, January 27, 2017
+                            3:30 PM – 5:00 PM EET</p>
+                        <p>
+                            <b>Location:</b>KPMG Ukraine
+                            32 вулиця Московська
+                            Kyiv</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            See more
+                        </a>
+                    </div>
+                </div>
+                <div class="index-event-card mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title mdl-card--expand">
+                        <h2 class="mdl-card__title-text">KSE Finance Club Meeting with KPMG Ukraine</h2>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        <p>
+                            <b>Date and time:</b> Fri, January 27, 2017
+                            3:30 PM – 5:00 PM EET</p>
+                        <p>
+                            <b>Location:</b>KPMG Ukraine
+                            32 вулиця Московська
+                            Kyiv</p>
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            See more
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="footer-copyright">
-        <div class="container">
-            <div class="container">
-                <p class="white-text text-lighten-3 left"> ©2017 Copyright</p>
-                <a class="white-text text-lighten-3 right" href="#!">More</a>
-            </div>
+    <div class="mdl-grid mdl-typography--text-center">
+        <div class="mdl-cell mdl-cell--12-col">
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                More events
+            </button>
         </div>
     </div>
-</footer>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script type="text/javascript" src="../public/js/materialize.min.js"></script>
+</div>
+<div class="mdl-grid contact-max-width">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h2 class="mdl-typography--font-thin">Contact</h2>
+        <div class="mdl-card__supporting-text">
+            <p>
+                Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure
+                enim
+                nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat
+                duis.
+            </p>
+            <form action="index">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name"/>
+                    <label class="mdl-textfield__label" for="Name">Name...</label>
+                    <span class="mdl-textfield__error">Letters and spaces only</span>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="Email"/>
+                    <label class="mdl-textfield__label" for="Email">Email...</label>
+                </div>
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <textarea class="mdl-textfield__input" type="text" rows="5" id="note"></textarea>
+                    <label class="mdl-textfield__label" for="note">Message...</label>
+                </div>
+                <p>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+                            type="submit">
+                        Submit
+                    </button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="index-one-line-section mdl-typography--text-center">
+    <p class="mdl-typography--headline mdl-typography--font-thin">Do you have questions? call at +380937077212</p>
+</div>
+<div class="mdl-mega-footer" th:fragment="footer">
+    <div class="mdl-mega-footer__middle-section">
+        <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox"></input>
+            <h1 class="mdl-mega-footer__heading">Features</h1>
+            <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Partners</a></li>
+                <li><a href="#">Updates</a></li>
+            </ul>
+        </div>
+
+        <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox"></input>
+            <h1 class="mdl-mega-footer__heading">Details</h1>
+            <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Specs</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+        </div>
+
+        <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox"></input>
+            <h1 class="mdl-mega-footer__heading">Technology</h1>
+            <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">How it works</a></li>
+                <li><a href="#">Patterns</a></li>
+                <li><a href="#">Usage</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Contracts</a></li>
+            </ul>
+        </div>
+
+        <div class="mdl-mega-footer__drop-down-section">
+            <input class="mdl-mega-footer__heading-checkbox" type="checkbox"></input>
+            <h1 class="mdl-mega-footer__heading">FAQ</h1>
+            <ul class="mdl-mega-footer__link-list">
+                <li><a href="#">Questions</a></li>
+                <li><a href="#">Answers</a></li>
+                <li><a href="#">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mdl-mega-footer__bottom-section">
+        <div class="mdl-logo">© 2017 Goevent. All Rights Reserved</div>
+        <ul class="mdl-mega-footer__link-list">
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Privacy Terms</a></li>
+        </ul>
+    </div>
+</div>
+<script src="../public/js/owl.carousel.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".index-image-section").fadeOut();
+        $(".index-image-section").fadeIn(450);
+        $('.owl-carousel').owlCarousel({
+            margin: 10,
+            autoHeight: true
+        });
+    });
+</script>
 </body>
 </html>
