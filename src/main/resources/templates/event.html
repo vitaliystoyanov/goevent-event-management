@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="common_header">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-green.min.css"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="../public/css/main.css"/>
+    <script src="http://maps.google.com/maps/api/js"></script>
+    <script src="../public/js/gmaps.js"></script>
+    <script src="../public/js/material.min.js"></script>
+    <meta charset="UTF-8"/>
+    <title>Goevent</title>
+</head>
+<body>
+<div th:replace="headers :: header">
+</div>
+<div class="mdl-grid--no-spacing">
+    <div class="image-section mdl-cell--no-spacing mdl-cell--12-col mdl-typography--text-center">
+        <div class="event-title mdl-typography--headline mdl-typography--font-regular">Elixir Club 5</div>
+        <div class="event-organizer mdl-typography--headline mdl-typography--font-thin">by Ruby Meditation Elixir Meetup
+            Team
+        </div>
+    </div>
+</div>
+<div class="description mdl-grid">
+    <div class="mdl-cell mdl-cell--3-col">
+        <h5 class="mdl-typography--text-center mdl-typography--headline">DATE AND TIME</h5>
+        Sat, January 28, 2017
+        10:00 AM – 7:00 PM EET
+    </div>
+    <div class="mdl-cell mdl-cell--3-col">
+        <h2 class="mdl-typography--text-center mdl-typography--headline">LOCATION</h2>
+        <div class="mdl-typography--font-light">
+            HUB 4.0
+            1/3 Yaroslavs'kyi Lane
+            Kyiv
+        </div>
+        <button class="button mdl-button mdl-js-button mdl-js-ripple-effect">
+            Open on Google Maps
+        </button>
+    </div>
+    <div class="tickets-available-section mdl-cell mdl-cell--6-col ">
+        <div class="tickets-available-card mdl-card mdl-shadow--2dp mdl-cell--middle">
+            <div class="mdl-card__title mdl-card--expand">
+                <h2 class="mdl-card__title-text">TICKETS AVAILABLE</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Aenan convallis.
+            </div>
+            <div class="mdl-card__actions mdl-card--border">
+                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                    Get tickets
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="description mdl-grid">
+    <div class="mdl-cell mdl-cell--10-col">
+        <h5 class="mdl-typography--headline">DESCRIPTION</h5>
+        <div class="mdl-typography--font-light">
+            Come together Elixir programmers!
+
+            New Kyiv Elixir meetup in the 2017 Year will happen on 28th January.
+            We are working for an interesting program and want to do create something special.
+
+            Keep in touch ;)
+        </div>
+    </div>
+</div>
+<!--<div class="tickets-section mdl-grid">-->
+    <!--<div class="mdl-cell mdl-cell&#45;&#45;12-col">-->
+        <!--<h5 class="mdl-typography&#45;&#45;text-center mdl-typography&#45;&#45;headline">TICKETS</h5>-->
+        <!--<table class="table-tickets mdl-data-table mdl-shadow&#45;&#45;2dp">-->
+            <!--<thead>-->
+            <!--<tr>-->
+                <!--<th>Type</th>-->
+                <!--<th class="mdl-data-table__cell&#45;&#45;non-numeric">Description</th>-->
+                <!--<th>Quantity</th>-->
+                <!--<th>Total</th>-->
+            <!--</tr>-->
+            <!--</thead>-->
+            <!--<tbody>-->
+            <!--<tr>-->
+                <!--<td>VIP</td>-->
+                <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">for students</td>-->
+                <!--<td>-->
+                    <!--5-->
+                <!--</td>-->
+                <!--<td>$2.90</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>VIP</td>-->
+                <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">for teachers</td>-->
+                <!--<td>-->
+                    <!--10-->
+                <!--</td>-->
+                <!--<td>$1.25</td>-->
+            <!--</tr>-->
+            <!--<tr>-->
+                <!--<td>VIP</td>-->
+                <!--<td class="mdl-data-table__cell&#45;&#45;non-numeric">Laminate (Gold on Blue)</td>-->
+                <!--<td>-->
+                    <!--10-->
+                <!--</td>-->
+                <!--<td>$2.35</td>-->
+            <!--</tr>-->
+            <!--</tbody>-->
+        <!--</table>-->
+        <!--<button class="button-checkout mdl-button mdl-js-button mdl-button&#45;&#45;raised mdl-js-ripple-effect mdl-button&#45;&#45;accent">-->
+            <!--Checkout-->
+        <!--</button>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="description organizer-contact mdl-grid mdl-typography--text-center">
+    <div class="mdl-cell mdl-cell--12-col">
+        <h5 class="mdl-typography--headline">ORGANIZER</h5>
+        <div>Inna Obolenska
+            +380-96-611-76-73
+        </div>
+        <button class="button mdl-button mdl-js-button mdl-button--primary">
+            Contact
+        </button>
+    </div>
+</div>
+<div class="map-section mdl-grid--no-spacing mdl-typography--text-center">
+    <div class="mdl-cell--no-spacing mdl-cell--12-col">
+        <h5 class="mdl-typography--headline">SEE YOU AT</h5>
+        <div id="map"></div>
+        <script>
+            var map = new GMaps({
+                el: '#map',
+                lat: 50.4446536,
+                lng: 30.521422
+            });
+        </script>
+    </div>
+</div>
+<div th:replace="index :: footer"></div>
+</body>
+</html>
