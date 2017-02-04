@@ -26,7 +26,7 @@ public class TicketType implements Serializable {
     @JoinColumn(name = "event_id")
     private Event event;
 
-    public TicketType(Long quantity) {}
+    public TicketType() {}
 
     public Long getId() {
         return id;

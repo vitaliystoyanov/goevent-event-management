@@ -14,8 +14,8 @@ public class UserDetails implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "login", unique = true, nullable = false)
-    private String login;
+    @Column(name = "username", unique = true, nullable = false)
+    private String username;
 
     @Column(name = "password", nullable = false)
     private String password;
@@ -28,9 +28,9 @@ public class UserDetails implements Serializable {
 
     public UserDetails() {}
 
-    public UserDetails(String login, String password, Set<UserRole> roles) {
+    public UserDetails(String username, String password, Set<UserRole> roles) {
         this.id = null;
-        this.login = login;
+        this.username = username;
         this.password = password;
         this.roles = roles;
     }
@@ -39,12 +39,12 @@ public class UserDetails implements Serializable {
         return id;
     }
 
-    public String getLogin() {
-        return login;
+    public String getUsername() {
+        return username;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -61,15 +61,5 @@ public class UserDetails implements Serializable {
 
     public void setRoles(Set<UserRole> roles) {
         this.roles = roles;
-    }
-
-    @Override
-    public String toString() {
-        return "UserDetails{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", roles=" + roles +
-                '}';
     }
 }
