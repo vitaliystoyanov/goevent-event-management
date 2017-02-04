@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-green.min.css"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="../public/css/style.css"/>
+    <script src="../public/js/material.min.js"></script>
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
     <meta charset="UTF-8"/>
     <title>Goevent - Dashboard</title>
 </head>
 <body>
-
+<div class="header-section mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+            <span class="mdl-layout-title"><a th:href="@{/}">
+                <img class="logo-brand" src="../public/image/logo.png"/></a></span>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase"
+                   th:href="@{/}">Back to home</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase"
+                   th:href="@{/dashboard/myevents}">My events</a>
+            </nav>
+            <div class="mdl-layout-spacer"></div>
+            <nav class="mdl-navigation">
+                <a class="mdl-navigation__link mdl-typography--text-uppercase"
+                   href="#team">Team</a>
+                <a class="mdl-navigation__link mdl-typography--text-uppercase"
+                   href="#" id="dashboard-profile">Profile</a>
+                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+                    for="dashboard-profile">
+                    <li class="mdl-menu__item">Some Action</li>
+                    <li class="mdl-menu__item">My events</li>
+                    <li class="mdl-menu__item"><a th:href="@{/account/logout}">Log out</a></li>
+                </ul>
+                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    Create an event
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Event</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" id="link-overview" href="#"><i class="material-icons">dashboard</i> Overview</a>
+            <a class="mdl-navigation__link" id="link-details" href="#"><i class="material-icons">assignment</i> Details</a>
+            <a class="mdl-navigation__link" id="link-tickets" href="#"><i class="material-icons">receipt</i> Tickets</a>
+        </nav>
+        <span class="mdl-layout-title">Attendees</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" id="link-attendees" href="#"><i class="material-icons">people</i> List</a>
+            <a class="mdl-navigation__link" id="link-add-attendees" href="#"><i class="material-icons">add</i> Add
+                attendees</a>
+            <a class="mdl-navigation__link" id="link-email-invitations" href="#"><i class="material-icons">email</i>
+                Email invitations</a>
+            <a class="mdl-navigation__link" id="link-mobile-app" href="#"><i class="material-icons">get_app</i> Mobile
+                app</a>
+        </nav>
+        <span class="mdl-layout-title">Sale</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" id="link-orders" href="#"><i class="material-icons">shopping_cart</i> Orders</a>
+        </nav>
+    </div>
+    <div class="mdl-layout__content" id="dashboard-content">
+        <div th:replace="fragments/overview"/>
+    </div>
+</div>
+<script src="../public/js/dashboard.js"></script>
 </body>
 </html>
