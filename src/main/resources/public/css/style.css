@@ -69,7 +69,7 @@
     margin: auto;
 }
 
-#logo-brand {
+.logo-brand {
     height: 35px;
     width: auto;
 }
@@ -136,7 +136,7 @@
     width: 100%;
 }
 
-.header-section .mdl-navigation__link:hover {
+.header-section .mdl-layout__header .mdl-navigation__link:hover {
     border-bottom: 2px solid #fff;
 }
 
@@ -163,4 +163,16 @@
     padding-top: 50px;
     max-width: 1044px;
     margin: auto;
+}
+
+.page-content {
+    height: 100%;
+}
+.mdl-progress {
+    width: 100%;
+}
+
+.overview-section {
+    height: 150px;
+    background-color: #f3f3f3;
 }

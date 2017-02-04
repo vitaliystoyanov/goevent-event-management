@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="mdl-grid">
+    <h4>Event details</h4>
+</div>
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="eventname"/>
+            <label class="mdl-textfield__label" for="eventname">Name of your event</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="startDateAndTime"/>
+            <label class="mdl-textfield__label" for="startDateAndTime">Start date and time</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="endDateAndTime"/>
+            <label class="mdl-textfield__label" for="endDateAndTime">End date and time</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <textarea class="mdl-textfield__input" type="text" rows="10" id="description"></textarea>
+            <label class="mdl-textfield__label" for="description">Event description</label>
+        </div>
+        <h5>Location</h5>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="venue"/>
+            <label class="mdl-textfield__label" for="venue">The venue's name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="Address"/>
+            <label class="mdl-textfield__label" for="Address">Address</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="City"/>
+            <label class="mdl-textfield__label" for="City">City</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="Country"/>
+            <label class="mdl-textfield__label" for="Country">Country</label>
+        </div>
+        <h5>Organizer</h5>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="name"/>
+            <label class="mdl-textfield__label" for="name">Organizer name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="contact"/>
+            <label class="mdl-textfield__label" for="contact">Email for contact</label>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Save
+        </button>
+    </div>
+    <div class="mdl-cell mdl-cell--6-col">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="image"/>
+            <label class="mdl-textfield__label" for="image">Image URL</label>
+        </div>
+    </div>
+</div>
+</html>
