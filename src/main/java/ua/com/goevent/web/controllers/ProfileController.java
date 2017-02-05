@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/account")
-public class UserController {
+public class ProfileController {
 
     @GetMapping("/login")
     public String login() {
@@ -20,6 +19,11 @@ public class UserController {
 
     @GetMapping("/logout")
     public String logout() {
-        return "redirect:/account/login";
+        return "redirect:/login";
+    }
+
+    @GetMapping("/myevents")
+    public String myEvents() {
+        return "myevents";
     }
 }

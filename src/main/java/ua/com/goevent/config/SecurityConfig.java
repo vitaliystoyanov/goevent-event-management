@@ -23,19 +23,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/")
-                    .permitAll()
+                    .antMatchers( "/", "/public/**").permitAll()
+                    .antMatchers("/myevents").access("hasRole('ROLE_ORGANIZER')")
+                    .anyRequest().permitAll()
                     .and()
                 .formLogin()
                     .loginPage("/login")
                     .usernameParameter("username")
                     .passwordParameter("password")
                     .failureUrl("/login?error")
-                    .defaultSuccessUrl("/dashboard")
+                    .defaultSuccessUrl("/myevents")
                     .permitAll()
                     .and()
                 .logout()
                     .logoutSuccessUrl("/login?logout")
-                    .permitAll();
+                    .permitAll()
+                    .and()
+                .csrf().disable();
     }
 }

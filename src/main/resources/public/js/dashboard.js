@@ -1,9 +1,9 @@
 $('#link-overview').on("click", function () {
-    $("#dashboard-content").load("/fragments/overview");
+    $("#dashboard-content").load("/overview");
 });
 $("#link-details").on("click", function () {
     $.ajax({
-        url: "/fragments/details",
+        url: "/details",
         type: "GET",
         success: function(response){
             $('#dashboard-content').html(response);
@@ -15,11 +15,11 @@ $("#link-details").on("click", function () {
     });
 });
 $("#link-attendees").on("click", function () {
-    $("#dashboard-content").load("/fragments/attendees");
+    $("#dashboard-content").load("/attendees");
 });
 $("#link-add-attendees").on("click", function () {
     $.ajax({
-        url: "/fragments/addattendees",
+        url: "/addattendees",
         type: "GET",
         success: function(response){
             $('#dashboard-content').html(response);
@@ -32,7 +32,7 @@ $("#link-add-attendees").on("click", function () {
 });
 $("#link-orders").on("click", function () {
     $.ajax({
-        url: "/fragments/orders",
+        url: "/orders",
         type: "GET",
         success: function(response){
             $('#dashboard-content').html(response);
@@ -44,8 +44,8 @@ $("#link-orders").on("click", function () {
     });
 });
 $("#link-tickets").on("click", function () {
-    $("#dashboard-content").load("/fragments/tickets");
+    $("#dashboard-content").load("/tickets");
 });
 $("#link-email-invitations").on("click", function () {
-    $("#dashboard-content").load("/fragments/emailinvitations");
+    $("#dashboard-content").load("/emailinvitations");
 });
