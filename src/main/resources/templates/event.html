@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:fragment="common_header">
+<head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-green.min.css"/>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"/>
@@ -12,8 +12,7 @@
     <title>Goevent</title>
 </head>
 <body>
-<div th:replace="headers :: header">
-</div>
+<div th:replace="index :: header"/>
 <div class="mdl-grid--no-spacing">
     <div class="image-section mdl-cell--no-spacing mdl-cell--12-col mdl-typography--text-center">
         <div class="event-title mdl-typography--headline mdl-typography--font-regular">Elixir Club 5</div>

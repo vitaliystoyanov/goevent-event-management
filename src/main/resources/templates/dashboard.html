@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-green.min.css"/>
@@ -11,61 +11,38 @@
     <title>Goevent - Dashboard</title>
 </head>
 <body>
-<div class="header-section mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
-    <header class="mdl-layout__header">
-        <div class="mdl-layout__header-row">
-            <span class="mdl-layout-title"><a th:href="@{/}">
-                <img class="logo-brand" src="../public/image/logo.png"/></a></span>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link mdl-typography--text-uppercase"
-                   th:href="@{/}">Back to home</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase"
-                   th:href="@{/myevents}">My events</a>
-            </nav>
-            <div class="mdl-layout-spacer"></div>
-            <nav class="mdl-navigation">
-                <a class="mdl-navigation__link mdl-typography--text-uppercase"
-                   href="#team">Team</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase"
-                   href="#" id="dashboard-profile">Profile</a>
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                    for="dashboard-profile">
-                    <li class="mdl-menu__item">Some Action</li>
-                    <li class="mdl-menu__item">My events</li>
-                    <li class="mdl-menu__item"><a th:href="@{/logout}">Log out</a></li>
-                </ul>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    Create an event
-                </button>
-            </nav>
+<div class="header-section mdl-layout mdl-js-layout">
+    <div th:replace="index :: header"></div>
+    <div class="mdl-layout__content">
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+                <h4>Dashboard</h4>
+            </div>
         </div>
-    </header>
-    <div class="mdl-layout__drawer">
-        <span class="mdl-layout-title">Event</span>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" id="link-overview" href="#"><i class="material-icons">dashboard</i> Overview</a>
-            <a class="mdl-navigation__link" id="link-details" href="#"><i class="material-icons">assignment</i> Details</a>
-            <a class="mdl-navigation__link" id="link-tickets" href="#"><i class="material-icons">receipt</i> Tickets</a>
-        </nav>
-        <span class="mdl-layout-title">Attendees</span>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" id="link-attendees" href="#"><i class="material-icons">people</i> List</a>
-            <a class="mdl-navigation__link" id="link-add-attendees" href="#"><i class="material-icons">add</i> Add
-                attendees</a>
-            <a class="mdl-navigation__link" id="link-email-invitations" href="#"><i class="material-icons">email</i>
-                Email invitations</a>
-            <a class="mdl-navigation__link" id="link-mobile-app" href="#"><i class="material-icons">get_app</i> Mobile
-                app</a>
-        </nav>
-        <span class="mdl-layout-title">Sale</span>
-        <nav class="mdl-navigation">
-            <a class="mdl-navigation__link" id="link-orders" href="#"><i class="material-icons">shopping_cart</i> Orders</a>
-        </nav>
-    </div>
-    <div class="mdl-layout__content" id="dashboard-content">
-        <div th:replace="fragments/overview"/>
+        <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--3-col">
+                <div class="demo-card-wide mdl-card mdl-shadow--2dp">
+                    <div class="mdl-card__title">
+                        <h4 class="mdl-card__title-text">Exilir club 2016</h4>
+                    </div>
+                    <div class="mdl-card__subtitle-text">
+                        <h6>Sat, January 28, 2017 10:00 AM – 7:00 PM EET</h6>
+                    </div>
+                    <div class="mdl-card__supporting-text">
+                        Come together Elixir programmers! New Kyiv Elixir meetup in the 2017 Year will happen on 28th
+                        January. We are working for an interesting program and want to do create something special. Keep
+                        in
+                        touch ;)
+                    </div>
+                    <div class="mdl-card__actions mdl-card--border">
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+                            Manage
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<script src="../public/js/dashboard.js"></script>
 </body>
 </html>

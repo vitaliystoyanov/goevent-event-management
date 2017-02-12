@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="event :: common_header">
-
-</head>
+<head th:replace="index :: common_header"/>
 <body>
-<div th:replace="headers :: header"></div>
+<div th:replace="index :: header"></div>
 <div class="mdl-grid">
     <div class="login-signup-card mdl-cell mdl-cell--12-col">
         <p class="login-headline mdl-typography--headline mdl-typography--font-thin mdl-typography--text-center">Sign
@@ -15,7 +13,7 @@
             </div>
             <div class="mdl-card__supporting-text">
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="sample1"/>
+                    <input class="mdl-textfield__input" type="text" id="sample1" autofocus="autofocus"/>
                     <label class="mdl-textfield__label" for="sample1">Email</label>
                 </div>
                 <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">

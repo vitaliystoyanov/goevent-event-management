@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-green.min.css"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="../public/css/style.css"/>
+    <script src="../public/js/material.min.js"></script>
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+    <meta charset="UTF-8"/>
+    <title>Goevent - Dashboard</title>
+</head>
+<body>
+<div class="header-section mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+    <div th:replace="index :: header"/>
+    <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Event</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" id="link-overview" href="#"><i class="material-icons">dashboard</i> Overview</a>
+            <a class="mdl-navigation__link" id="link-details" href="#"><i class="material-icons">assignment</i> Details</a>
+            <a class="mdl-navigation__link" id="link-tickets" href="#"><i class="material-icons">receipt</i> Tickets</a>
+        </nav>
+        <span class="mdl-layout-title">Attendees</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" id="link-attendees" href="#"><i class="material-icons">people</i> List</a>
+            <a class="mdl-navigation__link" id="link-add-attendees" href="#"><i class="material-icons">add</i> Add
+                attendees</a>
+            <a class="mdl-navigation__link" id="link-email-invitations" href="#"><i class="material-icons">email</i>
+                Email invitations</a>
+            <a class="mdl-navigation__link" id="link-mobile-app" href="#"><i class="material-icons">get_app</i> Mobile
+                app</a>
+        </nav>
+        <span class="mdl-layout-title">Sale</span>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" id="link-orders" href="#"><i class="material-icons">shopping_cart</i> Orders</a>
+        </nav>
+    </div>
+    <div class="mdl-layout__content" id="dashboard-content">
+        <div th:replace="fragments/overview"/>
+    </div>
+</div>
+<script src="../public/js/dashboard.js"></script>
+</body>
+</html>
