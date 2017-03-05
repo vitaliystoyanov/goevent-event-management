@@ -25,6 +25,7 @@ public class PersistenceConfig {
         emf.setPackagesToScan("ua.com.goevent.model");
         JpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         emf.setJpaVendorAdapter(adapter);
+        emf.setJpaProperties(hibernateProperties());
         return emf;
     }
 
