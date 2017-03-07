@@ -55,7 +55,7 @@ public class PersistenceConfig {
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
-        properties.put("hibernate.hbm2ddl.auto", "validate");
+        properties.put("hibernate.hbm2ddl.auto", "create");
         properties.put("hibernate.hbm2ddl.show-sql", "true");
         return properties;
     }

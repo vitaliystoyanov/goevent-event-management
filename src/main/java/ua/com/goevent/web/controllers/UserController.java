@@ -7,14 +7,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import ua.com.goevent.model.UserDetails;
-import ua.com.goevent.model.UserRole;
 import ua.com.goevent.service.UserDetailsServiceImpl;
 import ua.com.goevent.service.dto.UserDto;
 import ua.com.goevent.service.error.UserAlreadyExistException;
 
 import javax.validation.Valid;
-import java.util.HashSet;
-import java.util.Set;
 
 @Controller
 public class UserController {
@@ -34,12 +31,8 @@ public class UserController {
             System.out.println("errors");
             return "signup";
         }
-        Set<UserRole> roles = new HashSet<>();
-        roles.add(UserRole.ROLE_ORGANIZER);
-        UserDetails userDetails = new UserDetails(userDto.getEmail(),
-                userDto.getPassword(), roles);
         try {
-            userDetailsService.registerNewUser(userDetails);
+            userDetailsService.registerNewUserAsOrganizer(userDto);
         } catch (UserAlreadyExistException e) {
             System.err.println(e);
             return "signup";
