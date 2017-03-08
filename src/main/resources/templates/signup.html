@@ -1,33 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="index :: common_header"/>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-green.min.css"/>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"/>
+    <link type="text/css" rel="stylesheet" href="../public/css/style.css"/>
+    <script src="../public/js/material.min.js"></script>
+    <script src="../public/js/jquery-3.1.1.min.js"></script>
+    <meta charset="UTF-8"/>
+</head>
 <body>
-<div th:replace="index :: header"></div>
+<div th:replace="manage :: header"></div>
 <div class="mdl-grid">
     <div class="login-signup-card mdl-cell mdl-cell--12-col">
         <p class="login-headline mdl-typography--headline mdl-typography--font-thin mdl-typography--text-center">Sign
             up</p>
         <div class="mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text ">Organizer account</h2>
+                <h2 class="mdl-card__title-text ">Organizer or event manager account</h2>
             </div>
-            <div class="mdl-card__supporting-text">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="sample1" autofocus="autofocus"/>
-                    <label class="mdl-textfield__label" for="sample1">Email</label>
+            <form action="#" th:action="@{/signup}" th:object="${userDto}" method="post" id="signup-form">
+                <div class="mdl-card__supporting-text">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <label class="mdl-textfield__label" for="email">Email</label>
+                        <input class="mdl-textfield__input" th:field="*{email}" type="text" id="email"
+                               autofocus="autofocus" pattern="^[a-zA-Z0-9.!#$%’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/>
+                        <span class="mdl-textfield__error">Incorrect the email!</span>
+                    </div>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input class="mdl-textfield__input" th:field="*{password}" type="password" id="password"
+                        pattern="^.{6,30}$"/>
+                        <label class="mdl-textfield__label" for="password">Password</label>
+                        <span class="mdl-textfield__error">Length of password must be 6, but not more than 30 symbols!</span>
+                    </div>
                 </div>
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="sample2"/>
-                    <label class="mdl-textfield__label" for="sample2">Password</label>
+                <div class="mdl-card__actions">
+                    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+                       onclick="document.getElementById('signup-form').submit()">
+                        Sign up
+                    </a>
                 </div>
-            </div>
-            <div class="mdl-card__actions">
-                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                    Sign up
-                </a>
-            </div>
+
+            </form>
         </div>
-        <p class="signup-text mdl-typography--text-center">Already have an account? <a th:href="@{/login}">LOG IN</a></p>
+        <p class="signup-text mdl-typography--text-center">Already have an account? <a th:href="@{/signin}">Sign in</a>
+        </p>
     </div>
 </div>
 </body>

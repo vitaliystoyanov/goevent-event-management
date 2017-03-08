@@ -25,6 +25,7 @@ public class PersistenceConfig {
         emf.setPackagesToScan("ua.com.goevent.model");
         JpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
         emf.setJpaVendorAdapter(adapter);
+        emf.setJpaProperties(hibernateProperties());
         return emf;
     }
 
@@ -49,5 +50,13 @@ public class PersistenceConfig {
     @Bean
     public PersistenceExceptionTranslationPostProcessor exceptionTranslation(){
         return new PersistenceExceptionTranslationPostProcessor();
+    }
+
+    private Properties hibernateProperties() {
+        Properties properties = new Properties();
+        properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
+        properties.put("hibernate.hbm2ddl.auto", "validate");
+        properties.put("hibernate.hbm2ddl.show-sql", "true");
+        return properties;
     }
 }

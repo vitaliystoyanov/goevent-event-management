@@ -78,6 +78,11 @@
         </dependency>
 
         <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>1.0.2</version>
@@ -110,6 +115,24 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>4.2.5.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.5.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
         </dependency>
 
     </dependencies>
