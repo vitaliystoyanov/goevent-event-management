@@ -61,9 +61,9 @@
                             <li class="nav-item dropdown open" sec:authorize="isAuthenticated()">
                                 <a class="nav-link link dropdown-toggle mbr-editable-menu-item"
                                    href="index.html#pricing-table2-f" data-toggle="dropdown-submenu"
-                                   aria-expanded="true">PROFILE</a>
+                                   aria-expanded="true">DASHBOARD</a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item mbr-editable-menu-item" th:href="@{/dashboard}">Dashboad</a>
+                                    <a class="dropdown-item mbr-editable-menu-item" th:href="@{/dashboard}">Manage events</a>
                                     <a class="dropdown-item mbr-editable-menu-item" th:href="@{/logout}">Log out</a>
                                 </div>
                             </li>
@@ -77,7 +77,7 @@
                             </div>
                             <li class="nav-item nav-btn">
                                 <a class="nav-link btn btn-white btn-white-outline mbr-editable-menu-item"
-                                   href="#">CREATE
+                                   th:href="@{/newevent}">CREATE
                                     ANEVENT
                                 </a>
                             </li>
@@ -94,7 +94,6 @@
         </nav>
 
     </section>
-    <section class="engine"><a rel="external" href="https://mobirise.com">Mobirise</a></section>
 </div>
 
 <section class="mbr-section mbr-section-hero mbr-section-full header2 mbr-parallax-background mbr-after-navbar"
@@ -119,7 +118,7 @@
                             </div>
 
                             <div class="mbr-section-btn">
-                                <a class="btn btn-lg btn-white" href="#">CREATE AN EVENT</a>
+                                <a class="btn btn-lg btn-white" th:href="@{/newevent}">CREATE AN EVENT</a>
                                 <a class="btn btn-lg btn-white-outline btn-black" href="#">SEE UPCOMING EVENTS</a></div>
                         </div>
 
@@ -170,7 +169,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/interface-screenshot0-1.jpg" class="card-img-top"/>
+                    <div class="card-img"><img src="../public/assets/images/interface-screenshot0-1.jpg" class="card-img-top"/>
                     </div>
                     <div class="card-block">
                         <h4 class="card-title">Cool notifications</h4>
@@ -185,7 +184,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/interface-screenshot2.jpg" class="card-img-top"/>
+                    <div class="card-img"><img src="../public/assets/images/interface-screenshot2.jpg" class="card-img-top"/>
                     </div>
                     <div class="card-block">
                         <h4 class="card-title">Responsive</h4>
@@ -200,7 +199,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/interface-screenshot1.jpg" class="card-img-top"/>
+                    <div class="card-img"><img src="../public/assets/images/interface-screenshot1.jpg" class="card-img-top"/>
                     </div>
                     <div class="card-block">
                         <h4 class="card-title">Web Fonts</h4>
@@ -216,7 +215,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-3" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/interface-screenshot3.jpg" class="card-img-top"/>
+                    <div class="card-img"><img src="../public/assets/images/interface-screenshot3.jpg" class="card-img-top"/>
                     </div>
                     <div class="card-block">
                         <h4 class="card-title">Unlimited Sites</h4>
@@ -347,7 +346,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="mbr-testimonials mbr-section mbr-section-nopadding">
         <div class="container">
@@ -535,45 +533,7 @@
     </div>
 </section>
 
-<section class="mbr-section mbr-section-md-padding" id="social-buttons4-2a"
-         style="background-color: rgb(46, 46, 46); padding-top: 120px; padding-bottom: 120px;">
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-xs-center">
-                <h3 class="mbr-section-title display-2">FOLLOW US</h3>
-                <div><a class="btn btn-social" title="Twitter" target="_blank" href="https://twitter.com/mobirise"><i
-                        class="socicon socicon-twitter"></i></a> <a class="btn btn-social" title="Facebook"
-                                                                    target="_blank"
-                                                                    href="https://www.facebook.com/pages/Mobirise/1616226671953247"><i
-                        class="socicon socicon-facebook"></i></a> <a class="btn btn-social" title="Google+"
-                                                                     target="_blank"
-                                                                     href="https://plus.google.com/u/0/+Mobirise/posts"><i
-                        class="socicon socicon-googleplus"></i></a> <a class="btn btn-social" title="YouTube"
-                                                                       target="_blank"
-                                                                       href="https://www.youtube.com/channel/UCt_tncVAetpK5JeM8L-8jyw"><i
-                        class="socicon socicon-youtube"></i></a> <a class="btn btn-social" title="Instagram"
-                                                                    target="_blank"
-                                                                    href="https://instagram.com/mobirise/"><i
-                        class="socicon socicon-instagram"></i></a> <a class="btn btn-social" title="Pinterest"
-                                                                      target="_blank"
-                                                                      href="https://www.pinterest.com/mobirise/"><i
-                        class="socicon socicon-pinterest"></i></a> <a class="btn btn-social" title="Tumblr"
-                                                                      target="_blank"
-                                                                      href="http://mobirise.tumblr.com/"><i
-                        class="socicon socicon-tumblr"></i></a> <a class="btn btn-social" title="LinkedIn"
-                                                                   target="_blank"
-                                                                   href="https://www.linkedin.com/in/mobirise"><i
-                        class="socicon socicon-linkedin"></i></a></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="mbr-section mbr-parallax-background" id="form1-2h"
-         style="background-image: url(../public/assets/images/contact-us.jpg); padding-top: 120px; padding-bottom: 120px;">
-    <div class="mbr-overlay" style="opacity: 0.5; background-color: rgb(239, 239, 239);">
-    </div>
+<section class="mbr-section" id="form1-2h">
     <div class="mbr-section mbr-section__container mbr-section__container--middle">
         <div class="container">
             <div class="row">
@@ -647,6 +607,41 @@
 
                     </form>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="mbr-section mbr-section-md-padding" id="social-buttons4-2a"
+         style="background-color: rgb(46, 46, 46); padding-top: 120px; padding-bottom: 120px;">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-xs-center">
+                <h3 class="mbr-section-title display-2">FOLLOW US</h3>
+                <div><a class="btn btn-social" title="Twitter" target="_blank" href="https://twitter.com/mobirise"><i
+                        class="socicon socicon-twitter"></i></a> <a class="btn btn-social" title="Facebook"
+                                                                    target="_blank"
+                                                                    href="https://www.facebook.com/pages/Mobirise/1616226671953247"><i
+                        class="socicon socicon-facebook"></i></a> <a class="btn btn-social" title="Google+"
+                                                                     target="_blank"
+                                                                     href="https://plus.google.com/u/0/+Mobirise/posts"><i
+                        class="socicon socicon-googleplus"></i></a> <a class="btn btn-social" title="YouTube"
+                                                                       target="_blank"
+                                                                       href="https://www.youtube.com/channel/UCt_tncVAetpK5JeM8L-8jyw"><i
+                        class="socicon socicon-youtube"></i></a> <a class="btn btn-social" title="Instagram"
+                                                                    target="_blank"
+                                                                    href="https://instagram.com/mobirise/"><i
+                        class="socicon socicon-instagram"></i></a> <a class="btn btn-social" title="Pinterest"
+                                                                      target="_blank"
+                                                                      href="https://www.pinterest.com/mobirise/"><i
+                        class="socicon socicon-pinterest"></i></a> <a class="btn btn-social" title="Tumblr"
+                                                                      target="_blank"
+                                                                      href="http://mobirise.tumblr.com/"><i
+                        class="socicon socicon-tumblr"></i></a> <a class="btn btn-social" title="LinkedIn"
+                                                                   target="_blank"
+                                                                   href="https://www.linkedin.com/in/mobirise"><i
+                        class="socicon socicon-linkedin"></i></a></div>
             </div>
         </div>
     </div>

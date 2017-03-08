@@ -6,9 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import ua.com.goevent.model.UserDetails;
 import ua.com.goevent.service.UserDetailsServiceImpl;
-import ua.com.goevent.service.dto.UserDto;
+import ua.com.goevent.web.dto.UserDto;
 import ua.com.goevent.service.error.UserAlreadyExistException;
 
 import javax.validation.Valid;

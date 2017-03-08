@@ -1,4 +1,4 @@
-package ua.com.goevent.service.dto;
+package ua.com.goevent.web.dto;
 
 import org.hibernate.validator.constraints.Email;
 

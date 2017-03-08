@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import ua.com.goevent.model.UserDetails;
 import ua.com.goevent.model.UserRole;
 import ua.com.goevent.repository.UserDetailsRepository;
-import ua.com.goevent.service.dto.UserDto;
+import ua.com.goevent.web.dto.UserDto;
 import ua.com.goevent.service.error.UserAlreadyExistException;
 
 import javax.mail.MessagingException;
