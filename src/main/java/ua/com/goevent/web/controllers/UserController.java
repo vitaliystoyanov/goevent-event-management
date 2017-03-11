@@ -1,5 +1,7 @@
 package ua.com.goevent.web.controllers;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +16,7 @@ import javax.validation.Valid;
 
 @Controller
 public class UserController {
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
     private UserDetailsServiceImpl userDetailsService;
@@ -24,16 +27,16 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public String checkUserInfo(@Valid UserDto userDto, BindingResult bindingResult) {
-        System.out.println("user is " + userDto.toString());
+    public String checkUserInfo(@Valid UserDto userDto, BindingResult bindingResult, Model model) {
+        logger.info("Checking user info. Request: " + userDto.toString());
         if (bindingResult.hasErrors()) {
-            System.out.println("errors");
+            logger.error("Fields of form have errors! " + userDto.toString());
             return "signup";
         }
         try {
             userDetailsService.registerNewUserAsOrganizer(userDto);
         } catch (UserAlreadyExistException e) {
-            System.err.println(e);
+            logger.error("{} already exists!", userDto.getEmail());
             return "signup";
         }
         return "successRegistration";

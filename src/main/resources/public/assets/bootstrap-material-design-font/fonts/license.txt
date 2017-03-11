@@ -109,7 +109,7 @@ Section 1 -- Definitions.
      any other exception or limitation to Copyright and Similar Rights
      that applies to Your use of the Licensed Material.
 
-  g. License Elements means the license attributes listed in the name
+  g. License Elements means the license attributes listed in the basicName
      of a Creative Commons Public License. The License Elements of this
      Public License are Attribution and ShareAlike.
 

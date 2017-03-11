@@ -7,8 +7,11 @@
     <form action="#" th:action="@{/details}" method="post" id="create-event-form">
         <div class="mdl-cell mdl-cell--6-col">
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" th:field="${eventDto.name}" id="name"/>
-                <label class="mdl-textfield__label" for="name">Name of your event</label>
+                <input class="mdl-textfield__input" type="text" th:field="${eventDto.title}" id="title"
+                       pattern="^.{0,50}$"/>
+                <label class="mdl-textfield__label" for="title">Name of your event</label>
+                <span th:if="${#fields.hasErrors('eventDto.title')}" th:errors="${eventDto.title}">Error</span>
+                <span class="mdl-textfield__error">Max length is 50</span>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" th:field="${eventDto.startDate}" id="startDateAndTime"/>
@@ -18,15 +21,21 @@
                 <input class="mdl-textfield__input" type="text" th:field="${eventDto.endDate}" id="endDateAndTime"/>
                 <label class="mdl-textfield__label" for="endDateAndTime">End date and time</label>
             </div>
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                <input class="mdl-textfield__input" type="text" th:field="${eventDto.imageUrl}" id="image"/>
+                <label class="mdl-textfield__label" for="image">Image URL</label>
+                <span th:if="${#fields.hasErrors('eventDto.imageUrl')}" th:errors="${eventDto.imageUrl}">Error</span>
+            </div>
             <div class="mdl-textfield mdl-js-textfield">
                 <textarea class="mdl-textfield__input" type="text" rows="10" th:field="${eventDto.description}"
                           id="description"></textarea>
                 <label class="mdl-textfield__label" for="description">Event description</label>
+                <span th:if="${#fields.hasErrors('eventDto.description')}" th:errors="${eventDto.description}">Error</span>
             </div>
             <h5>Location</h5>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="venue"/>
-                <label class="mdl-textfield__label" for="venue">The venue's name</label>
+                <label class="mdl-textfield__label" for="venue">The venue's basicName</label>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                 <input class="mdl-textfield__input" type="text" id="Address"/>
@@ -42,27 +51,26 @@
             </div>
             <h5>Organizer</h5>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" th:field="${organizerDto.name}" id="1name"/>
+                <input class="mdl-textfield__input" type="text" th:field="${organizerDto.name}" id="1name"
+                       pattern="^.{0,50}$"/>
                 <label class="mdl-textfield__label" for="1name">Organizer name</label>
+                <span class="mdl-textfield__error">Max length is 50</span>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" th:field="${organizerDto.email}" id="contact"/>
+                <input class="mdl-textfield__input" type="text" th:field="${organizerDto.email}" id="contact"
+                       pattern="^[a-zA-Z0-9.!#$%’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/>
                 <label class="mdl-textfield__label" for="contact">Email for contact</label>
+                <span class="mdl-textfield__error">Input is not an email</span>
             </div>
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" th:field="${organizerDto.webpageUrl}" id="webpageUrl"/>
+                <input class="mdl-textfield__input" type="text" th:field="${organizerDto.webpageUrl}" id="webpageUrl"
+                       pattern="^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$"/>
                 <label class="mdl-textfield__label" for="webpageUrl">URL for contact</label>
+                <span class="mdl-textfield__error">Input is not URL</span>
             </div>
             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
                     onclick="document.getElementById('create-event-form').submit()">Save
             </button>
-        </div>
-        <div class=" mdl-cell mdl-cell--6-col
-            ">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" th:field="${eventDto.imageUrl}" id="image"/>
-                <label class="mdl-textfield__label" for="image">Image URL</label>
-            </div>
         </div>
     </form>
 </div>

@@ -1,8 +1,21 @@
 package ua.com.goevent.web.dto;
 
-public class OrganizerDto {
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.URL;
+
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+public class OrganizerDTO {
+
+    @Size(max = 50)
     private String name;
+
+    @URL
     private String webpageUrl;
+
+    @NotNull
+    @Email
     private String email;
 
     public String getName() {
@@ -31,7 +44,7 @@ public class OrganizerDto {
 
     @Override
     public String toString() {
-        return "OrganizerDto{" +
+        return "OrganizerDTO{" +
                 "name='" + name + '\'' +
                 ", webpageUrl='" + webpageUrl + '\'' +
                 ", email='" + email + '\'' +
