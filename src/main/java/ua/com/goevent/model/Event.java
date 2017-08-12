@@ -1,16 +1,20 @@
 package ua.com.goevent.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "events")
+@Data
+@NoArgsConstructor
 public class Event implements Serializable {
     private static final long serialVersionUID = -6391149432085415212L;
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -47,85 +51,17 @@ public class Event implements Serializable {
     @JoinColumn(name = "organizer_id")
     private Organizer organizer;
 
-    public Event() {}
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
+    public Event(String name, String description, String imageUrl,
+                 Location location, Date startDate, Date endDate,
+                 EventCategory category, EventStatus status, Organizer organizer) {
         this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
-    }
-
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
         this.location = location;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
         this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
         this.endDate = endDate;
-    }
-
-    public EventCategory getCategory() {
-        return category;
-    }
-
-    public void setCategory(EventCategory category) {
         this.category = category;
-    }
-
-    public EventStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(EventStatus status) {
         this.status = status;
-    }
-
-    public Organizer getOrganizer() {
-        return organizer;
-    }
-
-    public void setOrganizer(Organizer organizer) {
         this.organizer = organizer;
     }
 }

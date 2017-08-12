@@ -1,46 +1,37 @@
-apply plugin: 'java'
-apply plugin: 'maven'
-
-group = 'ua.com.goevent'
-version = '0.1.0'
-
-description = """"""
-
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-tasks.withType(JavaCompile) {
-	options.encoding = 'UTF-8'
-}
-
-
-
-repositories {'java'
-        
-     maven { url "https://repo.spring.io/libs-release" }
-     maven { url "http://repo.maven.apache.org/maven2" }
-}
-dependencies {
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version:'1.4.3.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version:'1.4.3.RELEASE'
-    compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version:'1.4.3.RELEASE'
-    compile group: 'org.springframework.data', name: 'spring-data-jpa', version:'1.10.7.RELEASE'
-    compile group: 'org.springframework.security', name: 'spring-security-web', version:'4.2.1.RELEASE'
-    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.1-api', version:'1.0.0.Final'
-    compile group: 'org.springframework', name: 'spring-orm', version:'4.2.5.RELEASE'
-    compile group: 'org.hibernate', name: 'hibernate-core', version:'5.1.0.Final'
-    compile group: 'org.hibernate', name: 'hibernate-entitymanager', version:'5.1.0.Final'
-    compile group: 'org.hibernate', name: 'hibernate-validator', version:'5.2.4.Final'
-    compile group: 'javax.persistence', name: 'persistence-api', version:'1.0.2'
-    compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version:'2.1.2.RELEASE'
-    compile group: 'commons-dbcp', name: 'commons-dbcp', version:'1.4'
-    compile group: 'postgresql', name: 'postgresql', version:'9.4.1208-jdbc42-atlassian-hosted'
-    compile group: 'junit', name: 'junit', version:'4.12'
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version:'1.4.3.RELEASE'
-    compile group: 'org.springframework', name: 'spring-context-support', version:'4.2.5.RELEASE'
-    compile group: 'javax.mail', name: 'javax.mail-api', version:'1.5.5'
-    compile group: 'javax.mail', name: 'mail', version:'1.4.7'
-    testCompile(group: 'org.springframework.boot', name: 'spring-boot-starter-test', version:'1.4.3.RELEASE') {
-exclude(module: 'commons-logging')
+buildscript {
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
     }
-    testCompile group: 'com.jayway.jsonpath', name: 'json-path', version:'2.2.0'
+}
+
+plugins {
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
+    id 'java'
+}
+
+repositories {
+     jcenter()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-devtools:$springBootVersion")
+
+    compile("org.springframework:spring-context-support")
+    compile("org.springframework.data:spring-data-jpa")
+    compile("org.springframework.security:spring-security-web")
+
+    compile("org.hibernate:hibernate-core:5.1.0.Final")
+    compile("org.hibernate:hibernate-entitymanager:5.1.0.Final")
+    compile("org.hibernate:hibernate-validator:5.2.4.Final")
+
+    compile("org.eclipse.persistence:javax.persistence:2.1.0")
+    compile("commons-dbcp:commons-dbcp:1.4")
+    compile("org.postgresql:postgresql:42.1.4")
+
+    compile("javax.mail:mail:1.4.7")
+
+    compileOnly("org.projectlombok:lombok:1.16.18")
 }

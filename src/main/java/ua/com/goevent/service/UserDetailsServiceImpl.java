@@ -1,13 +1,13 @@
 package ua.com.goevent.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
 import ua.com.goevent.model.UserDetails;
 import ua.com.goevent.model.UserRole;
 import ua.com.goevent.repository.UserDetailsRepository;
@@ -18,15 +18,12 @@ import javax.mail.MessagingException;
 import java.util.HashSet;
 import java.util.Set;
 
-@Service
+@Slf4j
+@RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService, UserService {
-
-    @Autowired
-    private UserDetailsRepository userDetailsRepository;
-    @Autowired
-    private MailServiceImpl mailService;
-    @Autowired
-    private PasswordEncoder passwordEncoder;
+    private final UserDetailsRepository userDetailsRepository;
+    private final MailServiceImpl mailService;
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDetails registerNewUserAsOrganizer(UserDto userDto) {
@@ -35,8 +32,7 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
         }
         Set<UserRole> roles = new HashSet<>();
         roles.add(UserRole.ROLE_ORGANIZER);
-        UserDetails newUser = new UserDetails(userDto.getEmail(),
-                passwordEncoder.encode(userDto.getPassword()), roles);
+        UserDetails newUser = new UserDetails(userDto.getEmail(), passwordEncoder.encode(userDto.getPassword()), roles);
         UserDetails savedUsed = userDetailsRepository.save(newUser);
         if (savedUsed != null) {
             try {

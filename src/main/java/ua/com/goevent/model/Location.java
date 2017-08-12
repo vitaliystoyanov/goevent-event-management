@@ -1,15 +1,19 @@
 package ua.com.goevent.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
 @Table(name = "locations")
+@Data
+@NoArgsConstructor
 public class Location implements Serializable {
     private static final long serialVersionUID = -7181541409863579446L;
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -32,5 +36,16 @@ public class Location implements Serializable {
     private String venue;
 
     @Embedded
-    private Coordinates coords;
+    private Coordinates coordinates;
+
+    public Location(String country, String state, String city,
+                    String address, String zipCode, String venue, Coordinates coordinates) {
+        this.country = country;
+        this.state = state;
+        this.city = city;
+        this.address = address;
+        this.zipCode = zipCode;
+        this.venue = venue;
+        this.coordinates = coordinates;
+    }
 }
