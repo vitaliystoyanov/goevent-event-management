@@ -1,16 +1,20 @@
 package ua.com.goevent.model;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Set;
 
 @Entity
 @Table(name = "user_details")
+@Data
+@NoArgsConstructor
 public class UserDetails implements Serializable {
     private static final long serialVersionUID = 2263250567684927004L;
 
     @Id
-    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -26,40 +30,9 @@ public class UserDetails implements Serializable {
     @ElementCollection(targetClass = UserRole.class, fetch = FetchType.EAGER)
     private Set<UserRole> roles;
 
-    public UserDetails() {}
-
     public UserDetails(String username, String password, Set<UserRole> roles) {
-        this.id = null;
         this.username = username;
         this.password = password;
-        this.roles = roles;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public Set<UserRole> getRoles() {
-        return roles;
-    }
-
-    public void setRoles(Set<UserRole> roles) {
         this.roles = roles;
     }
 }

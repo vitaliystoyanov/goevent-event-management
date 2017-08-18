@@ -1,2 +1,10 @@
-.idea
+# IDE-specific
+.idea/
 *.iml
+
+# Gradle meta
+.gradle/
+gradle/
+
+# Build output
+build/

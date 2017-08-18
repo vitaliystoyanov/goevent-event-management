@@ -1,0 +1,37 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.6.RELEASE'
+    }
+}
+
+plugins {
+    id 'org.springframework.boot' version '1.5.6.RELEASE'
+    id 'java'
+}
+
+repositories {
+     jcenter()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-starter-security:$springBootVersion")
+    compile("org.springframework.boot:spring-boot-devtools:$springBootVersion")
+
+    compile("org.springframework:spring-context-support")
+    compile("org.springframework.data:spring-data-jpa")
+    compile("org.springframework.security:spring-security-web")
+
+    compile("org.hibernate:hibernate-core:5.1.0.Final")
+    compile("org.hibernate:hibernate-entitymanager:5.1.0.Final")
+    compile("org.hibernate:hibernate-validator:5.2.4.Final")
+
+    compile("org.eclipse.persistence:javax.persistence:2.1.0")
+    compile("commons-dbcp:commons-dbcp:1.4")
+    compile("org.postgresql:postgresql:42.1.4")
+
+    compile("javax.mail:mail:1.4.7")
+
+    compileOnly("org.projectlombok:lombok:1.16.18")
+}
