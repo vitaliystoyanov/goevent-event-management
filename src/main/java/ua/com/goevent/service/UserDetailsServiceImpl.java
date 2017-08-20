@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 import ua.com.goevent.model.UserDetails;
 import ua.com.goevent.model.UserRole;
 import ua.com.goevent.repository.UserDetailsRepository;
@@ -20,6 +21,7 @@ import java.util.Set;
 
 @Slf4j
 @RequiredArgsConstructor
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService, UserService {
     private final UserDetailsRepository userDetailsRepository;
     private final MailServiceImpl mailService;
