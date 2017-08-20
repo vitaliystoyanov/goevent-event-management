@@ -51,6 +51,8 @@ public class Event implements Serializable {
     @JoinColumn(name = "organizer_id")
     private Organizer organizer;
 
+    private String contactUrl;
+
     public Event(String name, String description, String imageUrl,
                  Location location, Date startDate, Date endDate,
                  EventCategory category, EventStatus status, Organizer organizer) {

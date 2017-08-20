@@ -36,7 +36,10 @@ public class Ticket implements Serializable {
 
     @Column(name = "date_created")
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateCreated;
+    private Date dateCreated; // TODO: 8/20/17 Rename to purchasedOn?
+
+    private PaymentSource paymentSource;
+    private String orderedToken;
 
     public Ticket(String firstName, String lastName, String email,
                   String fileUrl, TicketType type, Date dateCreated) {

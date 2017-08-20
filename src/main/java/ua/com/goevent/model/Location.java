@@ -35,17 +35,16 @@ public class Location implements Serializable {
     @Column(name = "venue")
     private String venue;
 
-    @Embedded
-    private Coordinates coordinates;
+    private Double longitude;
+    private Double latitude;
 
     public Location(String country, String state, String city,
-                    String address, String zipCode, String venue, Coordinates coordinates) {
+                    String address, String zipCode, String venue) {
         this.country = country;
         this.state = state;
         this.city = city;
         this.address = address;
         this.zipCode = zipCode;
         this.venue = venue;
-        this.coordinates = coordinates;
     }
 }

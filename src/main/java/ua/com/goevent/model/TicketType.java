@@ -30,6 +30,9 @@ public class TicketType implements Serializable {
     @JoinColumn(name = "event_id")
     private Event event;
 
+    private Float price;
+    private Type type;
+
     public TicketType(Long quantity, String name, String description, Event event) {
         this.quantity = quantity;
         this.name = name;
