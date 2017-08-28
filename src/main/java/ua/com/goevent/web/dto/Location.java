@@ -1,6 +1,6 @@
 package ua.com.goevent.web.dto;
 
-public class LocationDTO {
+public class Location {
 
     private String country;
     private String state;
