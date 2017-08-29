@@ -2,16 +2,10 @@ package ua.com.goevent.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import ua.com.goevent.model.UserDetails;
 
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
@@ -30,7 +24,7 @@ public class MailService {
         message.setTo(new InternetAddress(recipientEmail));
         message.setText(bodyText);
 
-        this.mailSender.send(mimeMessage);
+        mailSender.send(mimeMessage);
     }
 
 }
