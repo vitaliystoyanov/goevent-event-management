@@ -9,8 +9,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @ComponentScan(basePackages = "ua.com.goevent")
 @EnableJpaRepositories(basePackages = { "ua.com.goevent.repository" })
-public class Application {
+public class EventManagementServer {
     public static void main(String[] args) {
-        SpringApplication.run(Application.class, args);
+        SpringApplication.run(EventManagementServer.class, args);
     }
 }

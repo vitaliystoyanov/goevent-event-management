@@ -33,6 +33,10 @@ dependencies {
     compile("org.postgresql:postgresql:42.1.4")
 
     compile("javax.mail:mail:1.4.7")
+    compile("com.google.code.findbugs:jsr305:3.0.1")
+
 
     compileOnly("org.projectlombok:lombok:1.16.18")
 }
+
+compileJava.dependsOn(processResources)
