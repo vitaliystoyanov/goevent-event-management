@@ -1,12 +1,12 @@
 package ua.com.goevent.service;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 @Data
 @Builder
-@RequiredArgsConstructor
+@AllArgsConstructor
 public class MailMessage {
     private final String from;
     private final String to;
