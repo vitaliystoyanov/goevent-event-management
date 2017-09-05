@@ -1,14 +1,19 @@
 # GoEvent Event Management
 ## Running application:
-1. Build Docker image with PostgreSQL:
+1. Build PostgreSQL Docker image:
 ```
-sudo docker build -t goevent/goevent-postgres:1.0 src/main/posgres-docker/
+docker build -t goevent/goevent-postgres:1.0 src/main/posgtres-docker/
 ```
 2. Run Docker container:
 ```
-sudo docker run -d --name=goevent-postgres -p 5432:5432 goevent/goevent-postgres:1.0
+docker run -d --name=goevent-postgres -p 5432:5432 goevent/goevent-postgres:1.0
 ```
-3. Run application:
+3. Wait until PostgreSQL finishes initialization. You can check status manually:
+```
+docker logs -f goevent-postgres
+```
+
+4. Run application:
 ```
 ./gradlew :bootRun
 ```
