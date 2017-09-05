@@ -15,16 +15,15 @@ public class MailService {
     private final JavaMailSender mailSender;
 
     @SneakyThrows
-    public void sendEmail(final String senderEmail, final String recipientEmail, String bodyText, String subject) {
-        final MimeMessage mimeMessage = this.mailSender.createMimeMessage();
-        final MimeMessageHelper message = new MimeMessageHelper(mimeMessage, "UTF-8");
+    public void sendEmail(MailMessage mailMessage) {
+        MimeMessage mimeMessage = mailSender.createMimeMessage();
+        MimeMessageHelper message = new MimeMessageHelper(mimeMessage, "UTF-8");
 
         message.setSubject("Test an email");
-        message.setFrom(senderEmail);
-        message.setTo(new InternetAddress(recipientEmail));
-        message.setText(bodyText);
+        message.setFrom(mailMessage.getFrom());
+        message.setTo(new InternetAddress(mailMessage.getTo()));
+        message.setText(mailMessage.getText());
 
         mailSender.send(mimeMessage);
     }
-
 }

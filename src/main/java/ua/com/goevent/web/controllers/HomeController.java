@@ -3,6 +3,7 @@ package ua.com.goevent.web.controllers;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import ua.com.goevent.service.MailMessage;
 import ua.com.goevent.service.MailService;
 
 @Controller
@@ -12,8 +13,8 @@ public class HomeController {
 
     @GetMapping("/events")
     public String event() {
-        mailService.sendEmail("info@goevent.com.ua", "developer.stoyanov@gmail.com",
-                "Test", "This test email.");
+        mailService.sendEmail(
+                new MailMessage("info@goevent.com.ua", "developer.stoyanov@gmail.com", "This test email.", "Test"));
         return "event";
     }
 

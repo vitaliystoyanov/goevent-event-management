@@ -37,9 +37,13 @@ public class UserDetailsServiceImpl implements UserDetailsService, UserService {
         UserDetails newUser = new UserDetails(userDto.getEmail(), passwordEncoder.encode(userDto.getPassword()), roles);
         UserDetails savedUsed = userDetailsRepository.save(newUser);
         if (savedUsed != null) {
-            mailService.sendEmail("developer.stoyanov@gmail.com", savedUsed.getUsername(), // FIXME: 3/7/17
-                    "Registration complete",
-                    "Goevent - Registration");
+            MailMessage message = new MailMessage(
+                    "developer.stoyanov@gmail.com",
+                    savedUsed.getUsername(),
+                    "Goevent - Registration",
+                    "Registration complete"
+            );
+            mailService.sendEmail(message); // FIXME
         }
         return savedUsed;
     }
