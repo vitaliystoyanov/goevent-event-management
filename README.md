@@ -2,7 +2,7 @@
 ## Running application:
 1. Build PostgreSQL Docker image:
 ```
-docker build -t goevent/goevent-postgres:1.0 src/main/posgtres-docker/
+docker build -t goevent/goevent-postgres:1.0 src/main/postgres-docker/
 ```
 2. Run Docker container:
 ```
